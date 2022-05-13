@@ -1,5 +1,4 @@
 #include "Game.h"
-#include "SDL_include.h"
 #include "State.h"
 
 #include <iostream>
@@ -45,9 +44,9 @@ Game::Game(string title, int height, int width) {
         exit(EXIT_FAILURE);
     }
 
-    int mixAllocateAudio = Mix_AllocateChannels(32);
+    Mix_AllocateChannels(32);
 
-    window = SDL_CreateWindow("Game Show", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, 0);
+    window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, 0);
     if (window == nullptr) {
         SDL_Log("Failed to Create Window: %s", SDL_GetError());
         exit(EXIT_FAILURE);

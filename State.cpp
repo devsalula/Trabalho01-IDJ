@@ -1,10 +1,10 @@
 #include "State.h"
-
+#include "Sprite.h"
 #include "SDL_include.h"
 
 State::State() {
     quitRequested = false;
-    // TODO: Init Sprite
+    bg = Sprite("img/ocean.jpg");
 }
 
 void State::LoadAssets() {
