@@ -18,7 +18,7 @@ Sprite::~Sprite() {
 
 void Sprite::Open(string file) {
     if (texture != nullptr) {
-        SDL_DestroyTexture(texture);
+        this->~Sprite();
     }
     
     SDL_Texture* textureLoaded = IMG_LoadTexture(Game::GetInstance().GetRenderer(), file.c_str());
@@ -28,7 +28,8 @@ void Sprite::Open(string file) {
     }
     
     int textureDimensions = SDL_QueryTexture(texture, nullptr, nullptr, &width, &height);
-    // SetClip(0, 0, )
+
+    SetClip(0, 0, width, height);
 }
 
 void Sprite::SetClip(int x, int y, int w, int h) {

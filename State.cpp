@@ -5,6 +5,7 @@
 State::State() {
     quitRequested = false;
     bg = Sprite("img/ocean.jpg");
+    music = Music("audio/stageState.ogg");
 }
 
 void State::LoadAssets() {
@@ -18,7 +19,7 @@ void State::Update(float dt) {
 }
 
 void State::Render() {
-    // TODO: Call bg Render
+    bg.Render(0, 0);
 }
 
 bool State::QuitRequested() {
