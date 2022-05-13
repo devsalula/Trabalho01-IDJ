@@ -28,6 +28,10 @@ void Sprite::Open(string file) {
     }
     
     int textureDimensions = SDL_QueryTexture(texture, nullptr, nullptr, &width, &height);
+    if (textureDimensions) {
+        SDL_Log("Ivalid Dimension: %s", SDL_GetError());
+        exit(EXIT_FAILURE);
+    }
 
     SetClip(0, 0, width, height);
 }

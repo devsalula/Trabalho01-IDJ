@@ -1,7 +1,6 @@
 #include "Game.h"
 #include "State.h"
 
-#include <iostream>
 #include <string>
 
 using namespace std;
