@@ -7,7 +7,6 @@
 #define INCLUDE_SDL_MIXER
 #include "State.h"
 
-#include<string>
 
 class Game {
     private:
@@ -17,13 +16,11 @@ class Game {
         State* state;
         Game(string title, int height, int width);
 
-
     public:
         static Game& GetInstance();
         ~Game();
         void Run();
         SDL_Renderer* GetRenderer();
         State& GetState();
-        Game& GetInstance();
 };
 #endif

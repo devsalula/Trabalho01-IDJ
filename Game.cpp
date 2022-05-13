@@ -2,9 +2,6 @@
 #include "SDL_include.h"
 #include "State.h"
 
-#define INCLUDE_SDL_MIXER
-#define INCLUDE_SDL_IMAGE
-
 #include <iostream>
 #include <string>
 
@@ -86,7 +83,11 @@ SDL_Renderer* Game::GetRenderer() {
     return renderer;
 }
 
-// TODO: Implements RUN
-// Game::Run() {
-
-// }
+void Game::Run() {
+    while (!state->QuitRequested()) {
+        state->Update(13);
+        state->Render();
+        SDL_RenderPresent(renderer);
+        SDL_Delay(33);
+    }
+}
