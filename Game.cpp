@@ -7,7 +7,7 @@ using namespace std;
 
 Game& Game::GetInstance() {
     if (instance == nullptr) {
-        instance = new Game("Game Show", 50, 100);
+        instance = new Game("Saleh Nazih Abdel Kader 160144485", 1024, 600);
     }
 
     return *instance;
